@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const {mongoose}= require("./config/dbConfig.js");
 
 const studentSchema = new mongoose.Schema({
     firstName: String,
