@@ -1,5 +1,5 @@
 const express = require('express');
-const Student = require('../models/studentModel.js');
+const studentService = require("../services/studentService.js");
 
 export const getAllStudentsController = async(req, res)=>{
     try{

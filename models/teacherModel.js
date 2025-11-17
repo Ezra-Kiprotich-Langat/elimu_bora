@@ -5,12 +5,15 @@ const teacherSchema = new mongoose.Schema({
     lastName: String,
     email: {type: String, unique: true, required: true},
     password: String,
-    subjects: [String],
     students: [
         {type: mongoose.Schema.Types.ObjectId,
             ref: "Student"
         }
-    ]
+    ],
+    subjects: [{ 
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: "Subject" 
+  }]
 });
 
 const Teacher = mongoose.model("Teacher", teacherSchema);

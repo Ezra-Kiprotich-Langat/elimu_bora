@@ -5,12 +5,15 @@ const studentSchema = new mongoose.Schema({
     lastName: String,
     email: {type: String, unique: true, required: true},
     password: String,
-    classLevel: String,
     subjects: String,
-    assignedTeacher:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Teacher"
-    }
+    teachers: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Teacher"
+  }],
+    subjects: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Subject"
+  }]
 });
 const Student = mongoose.model("Student", studentSchema);
 module.exports = Student;
