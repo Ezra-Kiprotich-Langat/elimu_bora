@@ -1,5 +1,4 @@
-const {mongoose} = require('../config/dbConfig.js');
-
+import { mongoose } from '../config/dbConfig.js';
 const adminSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
@@ -9,4 +8,4 @@ const adminSchema = new mongoose.Schema({
 });
 
 const Admin = mongoose.model("Admin", adminSchema);
-module.exports = Admin;
+export default Admin;

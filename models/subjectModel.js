@@ -1,4 +1,4 @@
-const {mongoose} = require("../config/dbConfig.js");
+import { mongoose } from '../config/dbConfig.js';
 
 const subjectSchema = new mongoose.Schema({
     name: String,
@@ -11,3 +11,5 @@ const subjectSchema = new mongoose.Schema({
         ref: "Student"
     }]
 });
+const Subject = mongoose.model("Subject", subjectSchema);
+export default Subject;

@@ -1,11 +1,10 @@
-const {mongoose}= require("./config/dbConfig.js");
+import { mongoose } from '../config/dbConfig.js';
 
 const studentSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
     email: {type: String, unique: true, required: true},
     password: String,
-    subjects: String,
     teachers: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Teacher"
@@ -16,4 +15,4 @@ const studentSchema = new mongoose.Schema({
   }]
 });
 const Student = mongoose.model("Student", studentSchema);
-module.exports = Student;
+export  default Student;

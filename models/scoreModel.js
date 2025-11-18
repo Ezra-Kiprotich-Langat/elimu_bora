@@ -1,4 +1,4 @@
-const {mongoose} = require("../config/dbConfig.js");
+import { mongoose } from '../config/dbConfig.js';
 
 const scoreSchema = new mongoose.Schema({
     score: Number,
@@ -14,3 +14,5 @@ const scoreSchema = new mongoose.Schema({
         ref: "Subject"
     }
 });
+const Score = mongoose.model("Score", scoreSchema);
+export default Score;

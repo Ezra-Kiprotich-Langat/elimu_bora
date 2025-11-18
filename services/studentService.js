@@ -1,5 +1,4 @@
-const Student = require("../models/studentModel.js")
-
+import Student from "../models/studentModel.js"
 module.exports = {
   create(data) { return Student.create(data); },
   getAll() { return Student.find(); },

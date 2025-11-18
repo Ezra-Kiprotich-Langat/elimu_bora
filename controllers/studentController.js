@@ -1,5 +1,9 @@
-const express = require('express');
-const studentService = require("../services/studentService.js");
+import express from "express";
+import Student from "../models/studentModel.js";
+
+const studentService = ("../services/studentService.js")
+
+
 
 export const getAllStudentsController = async(req, res)=>{
     try{

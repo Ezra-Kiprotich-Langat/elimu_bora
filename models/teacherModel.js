@@ -1,4 +1,4 @@
-const {mongoose} = require('../config/dbConfig.js');
+import { mongoose } from '../config/dbConfig.js';
 
 const teacherSchema = new mongoose.Schema({
     firstName: String,
@@ -17,4 +17,4 @@ const teacherSchema = new mongoose.Schema({
 });
 
 const Teacher = mongoose.model("Teacher", teacherSchema);
-module.exports = Teacher;
+export default Teacher;
