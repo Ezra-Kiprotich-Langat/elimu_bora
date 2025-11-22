@@ -15,9 +15,9 @@ export const getAllStudentsController = async(req, res)=>{
 }
 
 export const createNewStudentController = async(req, res)=>{
-    const {firstName, lastName, email, password, classLevel, subjects, assignedTeacher} = req.body;
+    const {firstName, lastName, email, password, teachers, subjects} = req.body;
     try{
-        const student = new Student({firstName, lastName, email, password, classLevel, subjects, assignedTeacher});
+        const student = new Student({firstName, lastName, email, password, teachers,subjects});
         const saved = await student.save();
         res.status(201).json(saved);
     } catch (error){

@@ -1,22 +1,27 @@
-import Score from "../models/scoreModel";
+import Score from "../models/scoreModel.js";
 
-export const getAllScores = async () => {
-    return await Score.find().populate("student").populate("subject");
+const scoreService = {
+
+  create(data) {
+    return Score.create(data); 
+  },
+
+  remove(id) {
+    return Score.findByIdAndDelete(id);
+  },
+
+  getAll() {
+    return Score.find().populate("student").populate("subject");
+  },
+
+  getById(id) {
+    return Score.findById(id).populate("student").populate("subject");
+  },
+
+  update(id, data) {
+    return Score.findByIdAndUpdate(id, data, { new: true });
+  }
 };
 
-export const getScoreById = async (id) => {
-    return await Score.findById(id).populate("student").populate("subject");
-};
+export default scoreService;
 
-export const createScore = async (data) => {
-    const score = new Score(data);
-    return await score.save();
-};
-
-export const updateScoreById = async (id, data) => {
-    return await Score.findByIdAndUpdate(id, data, { new: true });
-};
-
-export const deleteScoreById = async (id) => {
-    return await Score.findByIdAndDelete(id);
-};

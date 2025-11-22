@@ -1,7 +1,8 @@
 import { mongoose } from '../config/dbConfig.js';
 
 const subjectSchema = new mongoose.Schema({
-    name: String,
+    title: String,
+    description: String,
     teacher: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Teacher"
