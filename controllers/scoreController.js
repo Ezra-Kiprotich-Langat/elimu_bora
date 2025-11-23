@@ -79,16 +79,6 @@ export const updateScoreByIdController = async(req, res)=>{
     
 };
 
-// export const deleteScoreByIdController = async(req, res)=>{
-//     try {
-//         await Score.findByIdAndDelete(
-//             req.params.id
-//         )
-//         res.json({message: "Scores Deleted"})
-//     } catch (error){
-//         res.status(500).json({message: error.message})
-//     }
-// };
 export const deleteScoreByIdController = async(req, res) => {
   const { id } = req.params;
 
