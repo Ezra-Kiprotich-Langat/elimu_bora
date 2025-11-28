@@ -105,6 +105,4 @@ This project is currently unlicensed / under [specify license here] (if you choo
 
 
 
-If you like, I can also generate a full README with badges, license section, and contributors section(ready-to-copy).  
-Do you want me to build that full version for you now?
-::contentReference[oaicite:4]{index=4}
+
